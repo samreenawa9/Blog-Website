@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+   <!-- Blog Section Start -->
+   <div class="about_section layout_padding">
+      <div class="container">
+         <h1 class="about_taital text-center mb-8">Our Blogs</h1>
+         <div class="row">
+            {% for post in posts %}
+            <div class="col-lg-4 col-md-6">
+               <div class="card mb-4 shadow">
+                  {% if post.image %}
+                     <img src="{{ post.image.url }}" class="card-img-top" style="height:200px;object-fit:cover;" alt="{{ post.title }}">
+                  {% else %}
+                     <img src="{% static 'images/default.jpg' %}" class="card-img-top" alt="No image">
+                  {% endif %}
+                  <div class="card-body">
+                     <h5 class="card-title">{{ post.title }}</h5>
+                     <p class="card-text">{{ post.content|truncatewords:20 }}</p>
+                     <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary btn-block">Read More</a>
+                  </div>
+               </div>
+            </div>
+            {% empty %}
+            <p class="text-center">No blog posts yet.</p>
+            {% endfor %}
+         </div>
+         <div class="text-center mt-4">
+            <a href="{% url 'home' %}" class="btn btn-secondary">Back to Home</a>
+         </div>
+      </div>
+   </div>
+   <!-- Blog Section End -->
+{% endblock %}

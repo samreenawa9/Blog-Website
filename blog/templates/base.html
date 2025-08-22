@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <title>{% block title %}Bloscot{% endblock %}</title>
+
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+      <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+      <link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif">
+
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+
+      
+   </head>
+   <body>
+
+      <!-- ========== HEADER ========== -->
+      <div class="header_section">
+         <div class="container-fluid header_main">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <a class="logo" href="{% url 'home' %}">
+                  <img src="{% static 'images/logo.png' %}" alt="Logo">
+               </a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                     <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact Us</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <!-- ========== END HEADER ========== -->
+
+
+      <!-- ========== PAGE CONTENT ========== -->
+      <main>
+         {% block content %}{% endblock %}
+      </main>
+      <!-- ========== END PAGE CONTENT ========== -->
+
+
+      <!-- ========== FOOTER ========== -->
+      <div class="footer_section layout_padding margin_top_90">
+         <div class="container">
+            <div class="footer_logo">
+               <a href="{% url 'home' %}">
+                  <img src="{% static 'images/footer-logo.png' %}" alt="Footer Logo">
+               </a>
+            </div>
+            <div class="footer_menu">
+               <ul>
+                  <li><a href="{% url 'home' %}">Home</a></li>
+                  <li><a href="{% url 'about' %}">About</a></li>
+                  <li><a href="{% url 'blog' %}">Blog</a></li>
+                  <li><a href="{% url 'contact' %}">Contact Us</a></li>
+               </ul>
+            </div>
+            <div class="contact_menu">
+               <ul>
+                  <li><a href="#"><img src="{% static 'images/call-icon.png' %}"></a></li>
+                  <li><a href="#">Call : +92 0101011011</a></li>
+                  <li><a href="#"><img src="{% static 'images/mail-icon.png' %}"></a></li>
+                  <li><a href="#">me@gmail.com</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      {% comment %} <div class="copyright_section">
+         <div class="container">
+            <p class="copyright_text">
+               Copyright 2020 All Right Reserved By 
+            </p>
+         </div>
+      </div> {% endcomment %}
+      <!-- ========== END FOOTER ========== -->
+
+
+      <!-- JS -->
+      <script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/plugin.js' %}"></script>
+<script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+   </body>
+</html>

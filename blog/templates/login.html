@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="about_section layout_padding">
+   <div class="container">
+      <div class="row justify-content-center">
+         <div class="col-lg-6 col-md-8 col-sm-12">
+            <h1 class="about_taital text-center">Login</h1>
+
+            {% if messages %}
+               {% for message in messages %}
+                  <p style="color:red; text-align:center;">{{ message }}</p>
+               {% endfor %}
+            {% endif %}
+
+            <form method="POST" class="mt-4">
+               {% csrf_token %}
+               <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" name="username" id="username" placeholder="Enter your username" required>
+               </div>
+               <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
+               </div>
+               <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+            <p class="text-center mt-3">Don't have an account? <a href="#">Register here</a></p>
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %}

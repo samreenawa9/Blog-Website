@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+  .blog-page {
+    font-family: 'Georgia', serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 100px; /* navbar se thoda space */
+  }
+  .blog-container {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  ...
+</style>
+
+<div class="container blog-page">
+  <div class="blog-container">
+    <h1 class="blog-title">{{ post.title }}</h1>
+    <p class="blog-meta">
+      <small>By {{ post.author }} | {{ post.published_at|date:"F d, Y" }}</small>
+    </p>
+    {% if post.image %}
+      <img src="{{ post.image.url }}" alt="{{ post.title }}" class="blog-image">
+    {% endif %}
+    <div class="blog-content">
+      {{ post.content|linebreaks }}
+    </div>
+  </div>
+</div>
+{% endblock %}

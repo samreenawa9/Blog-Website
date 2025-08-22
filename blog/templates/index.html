@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO / WELCOME -->
+<div class="banner_section" style="padding:40px 0 20px 0; background:white; margin-bottom:20px;">
+  <div class="container">
+    <div class="row align-items-center" style="margin-bottom:0;">
+      
+      <!-- Left Content -->
+      <div class="col-lg-6 mb-4 mb-lg-0" style="margin-bottom:0;">
+        <h1 class="banner_taital" style="margin-bottom:20px; color:#222; line-height:1.3;">
+          WELCOME <br> to our blog
+        </h1>
+
+        <p style="font-size:1.05rem; line-height:1.8; color:#444; margin-bottom:15px;">
+          This is your space — where we share thoughtful, simple, and useful articles. 
+          Sit back, explore, and discover fresh ideas to brighten your day. ✨
+        </p>
+
+        <div style="background:#f8f9fa; border-radius:12px; padding:15px 20px; box-shadow:0 2px 6px rgba(0,0,0,0.05); margin-bottom:0;">
+          <p style="font-size:1rem; color:#555; margin:0;">
+            Our little hope: every visit here leaves you feeling 
+            <em>a bit more inspired and at ease</em> — that’s why we’ve kept it warm and welcoming. 💛
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="col-lg-6" style="margin-bottom:0;">
+        <div class="image_main" style="margin-bottom:0;">
+          <img src="{% static 'images/img-1.png' %}" alt="Welcome Image" 
+               style="width:100%; height:auto; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.08);">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3 HIGHLIGHTS (unchanged) -->
+<div class="about_section layout_padding" style="padding-top:30px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-4">
+        <h2 class="about_taital">What you’ll find here</h2>
+        <p style="color:#666;">Simple, heartfelt, and practical insights for everyday life.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card shadow h-100" style="border-radius:14px;">
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight:700;">Simple Guides</h5>
+            <p class="card-text" style="color:#555;">
+              Short, clear, and easy-to-follow — without unnecessary fluff.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card shadow h-100" style="border-radius:14px;">
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight:700;">Real Stories</h5>
+            <p class="card-text" style="color:#555;">
+              Everyday experiences that touch the heart and spark ideas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card shadow h-100" style="border-radius:14px;">
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight:700;">Tiny Tips</h5>
+            <p class="card-text" style="color:#555;">
+              Small hacks to make your routine lighter and more productive.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:24px;"></div>
+  </div>
+</div>
+
+{% endblock %}

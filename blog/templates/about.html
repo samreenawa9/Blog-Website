@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us - Bloscot{% endblock %}
+
+{% block content %}
+<div class="about_section layout_padding">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-6 col-sm-12">
+            <div class="like_icon">
+               <img src="{% static 'images/blog.jpg' %}" alt="About Image">
+            </div>
+         </div>
+         <div class="col-lg-6 col-sm-12">
+            <h1 class="about_taital">About Us</h1>
+            <p class="about_text">
+               We are a team of writers, creators, and thinkers dedicated to bringing you high-quality content
+               that informs, inspires, and entertains. Our mission is to share stories, insights, and practical
+               advice on topics we're passionate about — from travel and technology to food and lifestyle.
+            </p>
+            {% comment %} <div class="read_bt_1">
+               <a href="#">Read More</a>
+            </div> {% endcomment %}
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %}

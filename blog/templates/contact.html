@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- contact section start -->
+<div class="contact_section layout_padding">
+  <div class="container">
+    <div class="row d-flex align-items-center">
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <div class="image_container" style="max-height: 100%; display: flex; align-items: center;">
+          <img src="{% static 'images/contact-img.png' %}" alt="Contact Image" class="img-fluid" style="border-radius: 10px; max-height: 100%;">
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="mail_section_1">
+          <h1 class="contact_taital">Contact us</h1>
+
+          <!-- ✅ Form Added -->
+          <form method="POST" action="">
+            {% csrf_token %}
+            <input type="text" class="email_text" placeholder="Name" name="Name" style="margin-bottom: 15px;" required>
+            <input type="text" class="email_text" placeholder="Phone" name="Phone" style="margin-bottom: 15px;">
+            <input type="email" class="email_text" placeholder="Email" name="Email" style="margin-bottom: 15px;" required>
+            <textarea class="massage_text" placeholder="Message" rows="5" id="comment" name="Message" style="margin-bottom: 20px;" required></textarea>
+
+            <!-- Button ko bhi style me rakha -->
+            <div class="send_bt">
+  <button type="submit" 
+          style="background-color:#ff4b5c;
+                 color:white;
+                 padding:10px 25px;
+                 border:none;
+                 border-radius:5px;
+                 font-size:16px;
+                 font-weight:bold;
+                 text-transform:uppercase;
+                 cursor:pointer;">
+    Send
+  </button>
+</div>
+          </form>
+          <!-- ✅ Form End -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- contact section end -->
+{% endblock %}
